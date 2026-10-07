@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RD Property & Maintenance Ltd | Professional Handyman & Home Repairs in Telford, Shrewsbury & Staffordshire</title>
+    <meta name="description" content="Reliable property maintenance, handyman services, home repairs, and painting & decorating across Staffordshire, Shropshire, Shrewsbury, Telford & Wolverhampton, UK.">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            50: '#f0f4f8',
+                            100: '#d9e2ec',
+                            600: '#243b53',
+                            700: '#102a43',
+                            800: '#0b1e33',
+                            900: '#06101e',
+                        },
+                        amber: {
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Inter Font & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(16, 42, 67, 0.92) 0%, rgba(36, 59, 83, 0.85) 100%);
+        }
+        .image-overlay {
+            background: linear-gradient(to top, rgba(6, 16, 30, 0.85) 0%, rgba(6, 16, 30, 0.2) 60%, transparent 100%);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-amber-500 selection:text-white">
+
+    <!-- Top Bar -->
+    <div class="bg-navy-900 text-slate-300 text-xs py-2.5 px-4 hidden sm:block border-b border-navy-800">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-6">
+                <span><i class="fas fa-map-marker-alt text-amber-500 mr-2"></i> Serving Staffordshire, Shropshire, Shrewsbury, Telford & Wolverhampton</span>
+                <span><i class="fas fa-clock text-amber-500 mr-2"></i> Mon - Fri: 8:00 AM - 6:00 PM</span>
+            </div>
+            <div class="flex items-center space-x-6">
+                <a href="tel:+447979241405" class="hover:text-amber-400 transition font-medium"><i class="fas fa-phone-alt text-amber-500 mr-2"></i>+44 7979 241405</a>
+                <a href="mailto:rd.propertyandmaintenanceltd@outlook.com" class="hover:text-amber-400 transition"><i class="fas fa-envelope text-amber-500 mr-2"></i>rd.propertyandmaintenanceltd@outlook.com</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Main Header -->
+    <header id="header" class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300 border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#home" class="flex items-center space-x-3 group">
+                <img src="logo rd_2.png" alt="RD Property & Maintenance Ltd Logo" class="h-12 w-auto object-contain group-hover:scale-105 transition">
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium text-slate-700">
+                <a href="#home" class="hover:text-amber-600 transition">Home</a>
+                <a href="#about" class="hover:text-amber-600 transition">About</a>
+                <a href="#services" class="hover:text-amber-600 transition">Services</a>
+                <a href="#gallery" class="hover:text-amber-600 transition">Before & After</a>
+                <a href="#why-us" class="hover:text-amber-600 transition">Why Choose Us</a>
+                <a href="#testimonials" class="hover:text-amber-600 transition">Reviews</a>
+                <a href="#contact" class="hover:text-amber-600 transition">Contact</a>
+            </nav>
+
+            <!-- CTA Button & Mobile Menu Toggle -->
+            <div class="flex items-center space-x-4">
+                <a href="#contact" onclick="openQuoteModal()" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-semibold text-sm shadow-md hover:shadow-lg transition transform active:scale-95">
+                    <i class="fas fa-file-invoice-dollar mr-2"></i> Request a Quote
+                </a>
+                <button id="menu-btn" aria-label="Toggle menu" class="lg:hidden text-slate-700 hover:text-amber-600 focus:outline-none p-2 rounded-lg">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-6 py-6 space-y-4 shadow-xl">
+            <a href="#home" class="block text-slate-700 font-medium hover:text-amber-600 py-1 mobile-link">Home</a>
+            <a href="#about" class="block text-slate-700 font-medium hover:text-amber-600 py-1 mobile-link">About</a>
+            <a href="#services" class="block text-slate-700 font-medium hover:text-amber-600 py-1 mobile-link">Services</a>
+            <a href="#gallery" class="block text-slate-700 font-medium hover:text-amber-600 py-1 mobile-link">Before & After</a>
+            <a href="#why-us" class="block text-slate-700 font-medium hover:text-amber-600 py-1 mobile-link">Why Choose Us</a>
+            <a href="#testimonials" class="block text-slate-700 font-medium hover:text-amber-600 py-1 mobile-link">Reviews</a>
+            <a href="#contact" class="block text-slate-700 font-medium hover:text-amber-600 py-1 mobile-link">Contact</a>
+            <div class="pt-4 border-t border-slate-100 flex flex-col space-y-3">
+                <a href="tel:+447979241405" class="flex items-center text-slate-800 font-medium"><i class="fas fa-phone-alt text-amber-500 mr-3"></i> +44 7979 241405</a>
+                <button onclick="openQuoteModal()" class="w-full py-3 rounded-xl bg-amber-500 text-white font-semibold text-center shadow-md">Request a Quote</button>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="relative bg-navy-900 text-white overflow-hidden py-24 lg:py-32">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=2000&q=80" alt="Professional property maintenance and repairs" class="w-full h-full object-cover opacity-30 transform scale-105">
+            <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 bg-amber-500/20 border border-amber-500/40 px-4 py-1.5 rounded-full text-amber-400 text-sm font-semibold tracking-wide">
+                        <i class="fas fa-shield-alt text-amber-400"></i>
+                        <span>Trusted Local Property Experts</span>
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        Reliable Property Maintenance, <span class="text-amber-400">Done Right.</span>
+                    </h1>
+                    
+                    <p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Professional property maintenance, handyman services, home repairs, and painting & decorating across Staffordshire, Shropshire, Shrewsbury, Telford & Wolverhampton.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4 pt-2">
+                        <a href="#contact" onclick="openQuoteModal()" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-base shadow-xl hover:shadow-amber-500/20 transition transform active:scale-95 text-center">
+                            Request a Free Quote <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="tel:+447979241405" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-base transition text-center backdrop-blur-sm">
+                            <i class="fas fa-phone-alt text-amber-400 mr-2"> +44 7979 241405</i>
+                        </a>
+                    </div>
+
+                    <!-- Trust Highlights -->
+                    <div class="grid grid-cols-3 gap-4 pt-8 border-t border-slate-700/60 max-w-xl mx-auto lg:mx-0">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center text-amber-400 font-bold shrink-0">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="text-left">
+                                <span class="block text-sm font-bold text-white">Reliable Service</span>
+                                <span class="block text-xs text-slate-400">On-time & professional</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center text-amber-400 font-bold shrink-0">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <div class="text-left">
+                                <span class="block text-sm font-bold text-white">Quality Work</span>
+                                <span class="block text-xs text-slate-400">Guaranteed results</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center text-amber-400 font-bold shrink-0">
+                                <i class="fas fa-map-marked-alt"></i>
+                            </div>
+                            <div class="text-left">
+                                <span class="block text-sm font-bold text-white">Local Experts</span>
+                                <span class="block text-xs text-slate-400">West Midlands & Staffs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Quick Contact Card -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white rounded-3xl p-8 shadow-2xl text-slate-800 border border-slate-100">
+                        <h3 class="text-2xl font-bold text-navy-900 mb-2">Book a Quick Estimate</h3>
+                        <p class="text-slate-600 text-sm mb-6">Fill in your details and we’ll get back to you promptly with a transparent quote.</p>
+                        
+                        <form id="hero-quote-form" onsubmit="handleQuickQuote(event)" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-semibold uppercase text-slate-600 mb-1">Your Name</label>
+                                <input type="text" required placeholder="John Smith" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm">
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase text-slate-600 mb-1">Phone Number</label>
+                                    <input type="tel" required placeholder="07123 456789" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase text-slate-600 mb-1">Postcode / Area</label>
+                                    <input type="text" required placeholder="TF1 / WV1" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold uppercase text-slate-600 mb-1">Service Needed</label>
+                                <select class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm bg-white">
+                                    <option>Property Maintenance</option>
+                                    <option>Handyman Services</option>
+                                    <option>Home Repairs</option>
+                                    <option>Painting & Decorating</option>
+                                    <option>General Maintenance</option>
+                                    <option>Renovation & Improvement</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="w-full py-3.5 rounded-xl bg-navy-900 hover:bg-navy-800 text-white font-bold text-sm shadow-lg transition duration-200">
+                                Get Free Estimate
+                            </button>
+                            <p class="text-xs text-center text-slate-500 mt-3"><i class="fas fa-lock mr-1 text-amber-500"></i> No obligation. Fast response guaranteed.</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Image Grid -->
+                <div class="lg:col-span-6 grid grid-cols-2 gap-4">
+                    <div class="space-y-4">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="Tradesperson at work" class="rounded-2xl shadow-lg object-cover h-64 w-full transform hover:scale-[1.02] transition duration-300">
+                        <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=800&q=80" alt="Home repairs and maintenance" class="rounded-2xl shadow-lg object-cover h-48 w-full transform hover:scale-[1.02] transition duration-300">
+                    </div>
+                    <div class="space-y-4 pt-8">
+                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80" alt="Painting and decorating" class="rounded-2xl shadow-lg object-cover h-48 w-full transform hover:scale-[1.02] transition duration-300">
+                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80" alt="Property maintenance" class="rounded-2xl shadow-lg object-cover h-64 w-full transform hover:scale-[1.02] transition duration-300">
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="inline-flex items-center space-x-2 bg-amber-50 px-3.5 py-1.5 rounded-full text-amber-700 text-xs font-bold uppercase tracking-wider">
+                        <span>About Our Company</span>
+                    </div>
+                    
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight leading-tight">
+                        Your Dependable Partner for Property Care & Maintenance
+                    </h2>
+
+                    <p class="text-slate-600 leading-relaxed text-base">
+                        At <strong class="text-navy-900">RD Property & Maintenance Ltd</strong>, we pride ourselves on delivering exceptional property maintenance, handyman services, and home improvement solutions. Serving homeowners, landlords, and commercial clients throughout Staffordshire, Shropshire, Shrewsbury, Telford, and Wolverhampton, we combine expert craftsmanship with reliable customer service.
+                    </p>
+
+                    <p class="text-slate-600 leading-relaxed text-base">
+                        Whether you need routine home repairs, thorough painting and decorating, general property upkeep, or comprehensive renovations, our experienced team ensures every job is completed to the highest standards of safety and finish.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-6 pt-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center text-amber-600 font-bold shrink-0">
+                                <i class="fas fa-award text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy-900 text-base">Expert Trades</h4>
+                                <p class="text-xs text-slate-500 mt-0.5">Skilled & experienced professionals</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center text-amber-600 font-bold shrink-0">
+                                <i class="fas fa-handshake text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy-900 text-base">Fully Transparent</h4>
+                                <p class="text-xs text-slate-500 mt-0.5">Clear pricing with zero hidden fees</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-6">
+                        <a href="#contact" onclick="openQuoteModal()" class="inline-flex items-center px-6 py-3.5 rounded-xl bg-navy-900 hover:bg-navy-800 text-white font-bold text-sm shadow-md transition">
+                            Discuss Your Project <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="bg-amber-100 text-amber-800 text-xs font-bold uppercase px-3.5 py-1.5 rounded-full tracking-wider">What We Offer</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight">Comprehensive Property & Handyman Services</h2>
+                <p class="text-slate-600 text-base">From minor home repairs to complete property renovations, our skilled specialists handle all aspects of domestic and commercial property maintenance.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 border border-slate-200/80 flex flex-col group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80" alt="Property Maintenance" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy-900/60 to-transparent"></div>
+                        <span class="absolute bottom-3 left-3 bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-lg">Popular</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-navy-900 mb-2">Property Maintenance</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">Regular upkeep, scheduled checks, and preventative care to keep your domestic or rental properties in pristine condition.</p>
+                        </div>
+                        <a href="#contact" onclick="openQuoteModal()" class="inline-flex items-center text-amber-600 font-semibold text-sm hover:text-amber-700">
+                            Get Quote <i class="fas fa-chevron-right ml-1.5 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 border border-slate-200/80 flex flex-col group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Handyman Services" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy-900/60 to-transparent"></div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-navy-900 mb-2">Handyman Services</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">General odd jobs, shelving installation, TV mounting, flat-pack assembly, curtain rails, and household odd jobs.</p>
+                        </div>
+                        <a href="#contact" onclick="openQuoteModal()" class="inline-flex items-center text-amber-600 font-semibold text-sm hover:text-amber-700">
+                            Get Quote <i class="fas fa-chevron-right ml-1.5 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 border border-slate-200/80 flex flex-col group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80" alt="Home Repairs" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy-900/60 to-transparent"></div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-navy-900 mb-2">Home Repairs</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">Door adjustments, lock replacements, fence fixing, plaster patching, minor plumbing fixes, and structural repairs.</p>
+                        </div>
+                        <a href="#contact" onclick="openQuoteModal()" class="inline-flex items-center text-amber-600 font-semibold text-sm hover:text-amber-700">
+                            Get Quote <i class="fas fa-chevron-right ml-1.5 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 border border-slate-200/80 flex flex-col group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=600&q=80" alt="Painting & Decorating" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy-900/60 to-transparent"></div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-navy-900 mb-2">Painting & Decorating</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">Interior and exterior painting, wallpaper hanging, woodwork finishing, and flawless surface prep for a professional look.</p>
+                        </div>
+                        <a href="#contact" onclick="openQuoteModal()" class="inline-flex items-center text-amber-600 font-semibold text-sm hover:text-amber-700">
+                            Get Quote <i class="fas fa-chevron-right ml-1.5 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 border border-slate-200/80 flex flex-col group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80" alt="General Maintenance" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy-900/60 to-transparent"></div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-navy-900 mb-2">General Maintenance</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">Gutter cleaning, patio pressure washing, sealant renewal, garden upkeep assistance, and routine building checks.</p>
+                        </div>
+                        <a href="#contact" onclick="openQuoteModal()" class="inline-flex items-center text-amber-600 font-semibold text-sm hover:text-amber-700">
+                            Get Quote <i class="fas fa-chevron-right ml-1.5 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 border border-slate-200/80 flex flex-col group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80" alt="Renovation & Improvement" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy-900/60 to-transparent"></div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-navy-900 mb-2">Renovation & Improvement</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">Room makeovers, kitchen & bathroom refurbishments, flooring installation, and carpentry works.</p>
+                        </div>
+                        <a href="#contact" onclick="openQuoteModal()" class="inline-flex items-center text-amber-600 font-semibold text-sm hover:text-amber-700">
+                            Get Quote <i class="fas fa-chevron-right ml-1.5 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 7 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 border border-slate-200/80 flex flex-col group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80" alt="Property Repairs" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy-900/60 to-transparent"></div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-navy-900 mb-2">Property Repairs</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">Fast turnaround on emergency patch-ups, tenant checkout repairs, and landlord reactive maintenance requests.</p>
+                        </div>
+                        <a href="#contact" onclick="openQuoteModal()" class="inline-flex items-center text-amber-600 font-semibold text-sm hover:text-amber-700">
+                            Get Quote <i class="fas fa-chevron-right ml-1.5 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 8 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 border border-slate-200/80 flex flex-col group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80" alt="Commercial Property Maintenance" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy-900/60 to-transparent"></div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-navy-900 mb-2">Commercial Maintenance</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">Tailored contracts for offices, retail units, and commercial spaces requiring reliable ongoing care and repairs.</p>
+                        </div>
+                        <a href="#contact" onclick="openQuoteModal()" class="inline-flex items-center text-amber-600 font-semibold text-sm hover:text-amber-700">
+                            Get Quote <i class="fas fa-chevron-right ml-1.5 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="bg-amber-100 text-amber-800 text-xs font-bold uppercase px-3.5 py-1.5 rounded-full tracking-wider">Project Showcase</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight">Before & After Transformations</h2>
+                <p class="text-slate-600 text-base">Explore some of our recent property maintenance, decorating, and home improvement projects across the West Midlands and Staffordshire.</p>
+            </div>
+
+            <!-- Gallery Grid (8 Items) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Project 1 -->
+                <div class="bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 shadow-sm group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80" alt="Living Room Decoration" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-3 left-3 bg-navy-900/80 text-white text-xs font-bold px-2.5 py-1 rounded-md backdrop-blur-sm">Painting & Decorating</div>
+                    </div>
+                    <div class="p-5 space-y-2">
+                        <h4 class="font-bold text-navy-900 text-base">Lounge Refurbishment & Redecoration</h4>
+                        <p class="text-xs text-slate-500">Complete surface prep, skimming, feature wall painting, and woodwork finishing in Telford.</p>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 shadow-sm group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80" alt="Kitchen Handyman Repair" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-3 left-3 bg-navy-900/80 text-white text-xs font-bold px-2.5 py-1 rounded-md backdrop-blur-sm">Kitchen Repairs</div>
+                    </div>
+                    <div class="p-5 space-y-2">
+                        <h4 class="font-bold text-navy-900 text-base">Kitchen Worktop & Cabinet Fix</h4>
+                        <p class="text-xs text-slate-500">Hinge replacements, realignment, worktop re-sealing, and minor repairs in Shrewsbury.</p>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 shadow-sm group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80" alt="External Property Maintenance" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-3 left-3 bg-navy-900/80 text-white text-xs font-bold px-2.5 py-1 rounded-md backdrop-blur-sm">Exterior Upkeep</div>
+                    </div>
+                    <div class="p-5 space-y-2">
+                        <h4 class="font-bold text-navy-900 text-base">Fencing Repair & Pressure Washing</h4>
+                        <p class="text-xs text-slate-500">Post reinforcement, panel replacement, and patio jet washing in Wolverhampton.</p>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 shadow-sm group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80" alt="Bathroom Renovation" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-3 left-3 bg-navy-900/80 text-white text-xs font-bold px-2.5 py-1 rounded-md backdrop-blur-sm">Bathroom Refurb</div>
+                    </div>
+                    <div class="p-5 space-y-2">
+                        <h4 class="font-bold text-navy-900 text-base">Bathroom Silicone & Tile Repairs</h4>
+                        <p class="text-xs text-slate-500">Re-grouting, anti-mould silicone renewal, and fixture updates in Staffordshire.</p>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 shadow-sm group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=600&q=80" alt="General Handyman Tasks" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-3 left-3 bg-navy-900/80 text-white text-xs font-bold px-2.5 py-1 rounded-md backdrop-blur-sm">Handyman Works</div>
+                    </div>
+                    <div class="p-5 space-y-2">
+                        <h4 class="font-bold text-navy-900 text-base">Custom Shelving & TV Mounting</h4>
+                        <p class="text-xs text-slate-500">Secure wall bracket installation, cable concealment, and bespoke wooden shelving in Shropshire.</p>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 shadow-sm group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=600&q=80" alt="Office Unit Maintenance & Touch-ups" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-3 left-3 bg-navy-900/80 text-white text-xs font-bold px-2.5 py-1 rounded-md backdrop-blur-sm">Commercial Care</div>
+                    </div>
+                    <div class="p-5 space-y-2">
+                        <h4 class="font-bold text-navy-900 text-base">Office Unit Maintenance & Touch-ups</h4>
+                        <p class="text-xs text-slate-500">Routine property upkeep, door closer adjustments, and wall touch-ups in Telford.</p>
+                    </div>
+                </div>
+
+                <!-- Project 7 -->
+                <div class="bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 shadow-sm group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=600&q=80" alt="Hallway Redecoration" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-3 left-3 bg-navy-900/80 text-white text-xs font-bold px-2.5 py-1 rounded-md backdrop-blur-sm">Decorating</div>
+                    </div>
+                    <div class="p-5 space-y-2">
+                        <h4 class="font-bold text-navy-900 text-base">Staircase & Hallway Painting</h4>
+                        <p class="text-xs text-slate-500">High-durability satinwood woodwork and emulsion wall painting in Shrewsbury.</p>
+                    </div>
+                </div>
+
+                <!-- Project 8 -->
+                <div class="bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 shadow-sm group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=600&q=80" alt="Door and Lock Repairs" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-3 left-3 bg-navy-900/80 text-white text-xs font-bold px-2.5 py-1 rounded-md backdrop-blur-sm">Home Repairs</div>
+                    </div>
+                    <div class="p-5 space-y-2">
+                        <h4 class="font-bold text-navy-900 text-base">Door Realignment & Lock Upgrades</h4>
+                        <p class="text-xs text-slate-500">UPVC door mechanism repairs, draught-proofing, and lock replacements across Wolverhampton.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-us" class="py-24 bg-navy-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#f59e0b_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="bg-amber-500/20 text-amber-400 text-xs font-bold uppercase px-3.5 py-1.5 rounded-full tracking-wider border border-amber-500/30">Why Choose RD Property</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Built on Trust, Quality & Reliability</h2>
+                <p class="text-slate-300 text-base">Discover why homeowners and property managers throughout Staffordshire, Shropshire, and the West Midlands rely on our expert team.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+                <!-- Feature 1 -->
+                <div class="bg-slate-800/80 backdrop-blur-md rounded-2xl p-6 border border-slate-700 hover:border-amber-500 transition duration-300 space-y-4">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl font-bold">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Reliable & Professional</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">We turn up on time, communicate clearly, and complete projects efficiently with minimal disruption.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-slate-800/80 backdrop-blur-md rounded-2xl p-6 border border-slate-700 hover:border-amber-500 transition duration-300 space-y-4">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl font-bold">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Quality Workmanship</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Meticulous attention to detail and adherence to the highest trade standards on every single task.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-slate-800/80 backdrop-blur-md rounded-2xl p-6 border border-slate-700 hover:border-amber-500 transition duration-300 space-y-4">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl font-bold">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Local & Trusted</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Proudly serving Staffordshire, Shropshire, Shrewsbury, Telford, and Wolverhampton communities.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-slate-800/80 backdrop-blur-md rounded-2xl p-6 border border-slate-700 hover:border-amber-500 transition duration-300 space-y-4">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl font-bold">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Attention to Detail</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">From prep work to final clean-up, we ensure flawless finishes and pristine results.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="bg-slate-800/80 backdrop-blur-md rounded-2xl p-6 border border-slate-700 hover:border-amber-500 transition duration-300 space-y-4">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl font-bold">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Customer-Focused</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Your satisfaction is our priority. Honest quotes, friendly service, and dedicated support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="bg-amber-100 text-amber-800 text-xs font-bold uppercase px-3.5 py-1.5 rounded-full tracking-wider">Simple 3-Step Process</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight">How We Work With You</h2>
+                <p class="text-slate-600 text-base">Getting your property maintenance and repairs sorted is quick and straightforward.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+                <!-- Step 1 -->
+                <div class="bg-slate-50 rounded-3xl p-8 border border-slate-200/80 text-center relative group hover:shadow-lg transition">
+                    <div class="w-16 h-16 bg-navy-900 text-amber-400 rounded-2xl mx-auto flex items-center justify-center text-2xl font-black mb-6 shadow-md group-hover:bg-amber-500 group-hover:text-white transition">
+                        01
+                    </div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-3">Get in Touch</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Contact us via phone, email, or our online quote form with details of the maintenance or repair work required.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-slate-50 rounded-3xl p-8 border border-slate-200/80 text-center relative group hover:shadow-lg transition">
+                    <div class="w-16 h-16 bg-navy-900 text-amber-400 rounded-2xl mx-auto flex items-center justify-center text-2xl font-black mb-6 shadow-md group-hover:bg-amber-500 group-hover:text-white transition">
+                        02
+                    </div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-3">Receive Your Quote</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">We review your request, provide a clear, competitive, and transparent estimate with no hidden obligations.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-slate-50 rounded-3xl p-8 border border-slate-200/80 text-center relative group hover:shadow-lg transition">
+                    <div class="w-16 h-16 bg-navy-900 text-amber-400 rounded-2xl mx-auto flex items-center justify-center text-2xl font-black mb-6 shadow-md group-hover:bg-amber-500 group-hover:text-white transition">
+                        03
+                    </div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-3">We Complete the Work</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Our skilled professional arrives on schedule to carry out the work to an exceptionally high standard, leaving your property spotless.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="py-24 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="bg-amber-100 text-amber-800 text-xs font-bold uppercase px-3.5 py-1.5 rounded-full tracking-wider">Client Feedback</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight">What Our Clients Say</h2>
+                <p class="text-slate-600 text-base">Sample and demo testimonials representing our commitment to quality service across Shropshire and Staffordshire.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200/80 flex flex-col justify-between space-y-6 relative">
+                    <div class="absolute top-6 right-6 text-amber-500/20 text-5xl font-serif">“</div>
+                    <div class="space-y-4">
+                        <div class="flex text-amber-500 space-x-1 text-sm">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed italic">
+                            “RD Property & Maintenance carried out general repairs and redecorated our hallway in Telford. Punctual, extremely tidy, and the quality of finish was fantastic. Highly recommended!”
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-4 pt-4 border-t border-slate-100">
+                        <div class="w-12 h-12 bg-navy-900 text-amber-400 rounded-full flex items-center justify-center font-bold text-lg">
+                            MR
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-navy-900 text-sm">Mark Roberts</h4>
+                            <span class="text-xs text-slate-500">Homeowner, Telford (Demo)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200/80 flex flex-col justify-between space-y-6 relative">
+                    <div class="absolute top-6 right-6 text-amber-500/20 text-5xl font-serif">“</div>
+                    <div class="space-y-4">
+                        <div class="flex text-amber-500 space-x-1 text-sm">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed italic">
+                            “As a landlord with multiple properties in Shrewsbury, finding a dependable handyman service is crucial. RD Property has been prompt, professional, and transparent with pricing every time.”
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-4 pt-4 border-t border-slate-100">
+                        <div class="w-12 h-12 bg-navy-900 text-amber-400 rounded-full flex items-center justify-center font-bold text-lg">
+                            SL
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-navy-900 text-sm">Sarah Lawrence</h4>
+                            <span class="text-xs text-slate-500">Landlord, Shrewsbury (Demo)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200/80 flex flex-col justify-between space-y-6 relative">
+                    <div class="absolute top-6 right-6 text-amber-500/20 text-5xl font-serif">“</div>
+                    <div class="space-y-4">
+                        <div class="flex text-amber-500 space-x-1 text-sm">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed italic">
+                            “Fantastic workmanship! They fixed our exterior fencing and handled several odd jobs around the house in Wolverhampton. Clean, polite, and very professional throughout.”
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-4 pt-4 border-t border-slate-100">
+                        <div class="w-12 h-12 bg-navy-900 text-amber-400 rounded-full flex items-center justify-center font-bold text-lg">
+                            DP
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-navy-900 text-sm">David Powell</h4>
+                            <span class="text-xs text-slate-500">Homeowner, Wolverhampton (Demo)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-amber-500 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#06101e_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-8">
+            <h2 class="text-3xl sm:text-5xl font-black text-navy-900 tracking-tight">Need Property Maintenance or Repairs?</h2>
+            <p class="text-navy-900 text-lg sm:text-xl font-medium max-w-2xl mx-auto">Let’s get your property looking and working its best. Contact our local team today for expert advice and a fast quote.</p>
+            <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <button onclick="openQuoteModal()" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-navy-900 hover:bg-navy-800 text-white font-bold text-base shadow-xl transition transform active:scale-95">
+                    Request a Quote <i class="fas fa-file-invoice-dollar ml-2 text-amber-400"></i>
+                </button>
+                <a href="tel:+447979241405" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white hover:bg-slate-100 text-navy-900 font-bold text-base shadow-xl transition text-center">
+                    <i class="fas fa-phone-alt text-amber-600 mr-2"></i> Call RD Property & Maintenance
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <!-- Contact Info -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div class="space-y-4">
+                        <span class="bg-amber-100 text-amber-800 text-xs font-bold uppercase px-3.5 py-1.5 rounded-full tracking-wider">Get in Touch</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight">Contact Our Team</h2>
+                        <p class="text-slate-600 text-base">Reach out to discuss your maintenance requirements, home repairs, or painting projects. We’re here to help!</p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-amber-100 rounded-2xl flex items-center justify-center text-amber-600 font-bold shrink-0 text-xl shadow-sm">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy-900 text-base">Company Name</h4>
+                                <p class="text-slate-600 text-sm mt-0.5">RD Property & Maintenance Ltd</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-amber-100 rounded-2xl flex items-center justify-center text-amber-600 font-bold shrink-0 text-xl shadow-sm">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy-900 text-base">Location & Coverage</h4>
+                                <p class="text-slate-600 text-sm mt-0.5">Telford, United Kingdom</p>
+                                <p class="text-slate-500 text-xs mt-1">Serving Staffordshire, Shropshire, Shrewsbury, Telford & Wolverhampton</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-amber-100 rounded-2xl flex items-center justify-center text-amber-600 font-bold shrink-0 text-xl shadow-sm">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy-900 text-base">Phone Number</h4>
+                                <a href="tel:+447979241405" class="text-slate-600 hover:text-amber-600 text-sm mt-0.5 block font-medium">+44 7979 241405</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-amber-100 rounded-2xl flex items-center justify-center text-amber-600 font-bold shrink-0 text-xl shadow-sm">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy-900 text-base">Email Address</h4>
+                                <a href="mailto:rd.propertyandmaintenanceltd@outlook.com" class="text-slate-600 hover:text-amber-600 text-sm mt-0.5 block font-medium">rd.propertyandmaintenanceltd@outlook.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="lg:col-span-7">
+                    <div class="bg-slate-50 rounded-3xl p-8 sm:p-10 border border-slate-200 shadow-sm">
+                        <h3 class="text-2xl font-bold text-navy-900 mb-2">Request a Free Quote</h3>
+                        <p class="text-slate-600 text-sm mb-8">Fill out the form below and we will get back to you promptly.</p>
+
+                        <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase text-slate-700 mb-2">Your Name *</label>
+                                    <input type="text" id="contact-name" required placeholder="John Smith" class="w-full px-4 py-3.5 rounded-xl border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase text-slate-700 mb-2">Phone Number *</label>
+                                    <input type="tel" id="contact-phone" required placeholder="+44 7123 456789" class="w-full px-4 py-3.5 rounded-xl border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase text-slate-700 mb-2">Email Address *</label>
+                                    <input type="email" id="contact-email" required placeholder="john@example.com" class="w-full px-4 py-3.5 rounded-xl border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase text-slate-700 mb-2">Service Required *</label>
+                                    <select id="contact-service" class="w-full px-4 py-3.5 rounded-xl border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm">
+                                        <option>Property Maintenance</option>
+                                        <option>Handyman Services</option>
+                                        <option>Home Repairs</option>
+                                        <option>Painting & Decorating</option>
+                                        <option>General Maintenance</option>
+                                        <option>Renovation & Improvement</option>
+                                        <option>Commercial Property Maintenance</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold uppercase text-slate-700 mb-2">Project Details / Message *</label>
+                                <textarea id="contact-message" rows="4" required placeholder="Please describe the work required..." class="w-full px-4 py-3.5 rounded-xl border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-4 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-base shadow-lg transition duration-200">
+                                Request a Quote
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-navy-900 text-slate-400 py-16 border-t border-navy-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Col 1 -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <img src="logo rd_2.png" alt="RD Property & Maintenance Ltd Logo" class="h-12 w-auto object-contain bg-white/10 p-1.5 rounded-xl">
+                    </div>
+                    <p class="text-sm leading-relaxed text-slate-400">
+                        Professional property maintenance, handyman services, and home improvements across Staffordshire, Shropshire, Shrewsbury, Telford, and Wolverhampton.
+                    </p>
+                    <div class="flex space-x-4 pt-2">
+                        <a href="#" class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-amber-500 hover:text-navy-900 flex items-center justify-center text-white transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-amber-500 hover:text-navy-900 flex items-center justify-center text-white transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-amber-500 hover:text-navy-900 flex items-center justify-center text-white transition"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2 -->
+                <div class="space-y-4">
+                    <h4 class="text-white font-bold text-base uppercase tracking-wider">Quick Links</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="#home" class="hover:text-amber-400 transition">Home</a></li>
+                        <li><a href="#about" class="hover:text-amber-400 transition">About Us</a></li>
+                        <li><a href="#services" class="hover:text-amber-400 transition">Our Services</a></li>
+                        <li><a href="#gallery" class="hover:text-amber-400 transition">Before & After Gallery</a></li>
+                        <li><a href="#why-us" class="hover:text-amber-400 transition">Why Choose Us</a></li>
+                        <li><a href="#testimonials" class="hover:text-amber-400 transition">Customer Reviews</a></li>
+                        <li><a href="#contact" class="hover:text-amber-400 transition">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div class="space-y-4">
+                    <h4 class="text-white font-bold text-base uppercase tracking-wider">Service Areas</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><i class="fas fa-check text-amber-500 mr-2 text-xs"></i> Staffordshire</li>
+                        <li><i class="fas fa-check text-amber-500 mr-2 text-xs"></i> Shropshire</li>
+                        <li><i class="fas fa-check text-amber-500 mr-2 text-xs"></i> Shrewsbury</li>
+                        <li><i class="fas fa-check text-amber-500 mr-2 text-xs"></i> Telford</li>
+                        <li><i class="fas fa-check text-amber-500 mr-2 text-xs"></i> Wolverhampton</li>
+                        <li><i class="fas fa-check text-amber-500 mr-2 text-xs"></i> Surrounding West Midlands</li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 -->
+                <div class="space-y-4">
+                    <h4 class="text-white font-bold text-base uppercase tracking-wider">Contact Details</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-map-marker-alt text-amber-500 mt-1"></i>
+                            <span>Telford, Shropshire, United Kingdom</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-phone-alt text-amber-500"></i>
+                            <a href="tel:+447979241405" class="hover:text-amber-400 transition">+44 7979 241405</a>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-amber-500"></i>
+                            <a href="mailto:rd.propertyandmaintenanceltd@outlook.com" class="hover:text-amber-400 transition text-xs">rd.propertyandmaintenanceltd@outlook.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-navy-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 space-y-4 sm:space-y-0">
+                <p>&copy; 2026 RD Property & Maintenance Ltd. All rights reserved. Registered in the United Kingdom.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-slate-400 transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-slate-400 transition">Terms of Service</a>
+                    <a href="#" class="hover:text-slate-400 transition">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quote Modal -->
+    <div id="quote-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm hidden p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-8 shadow-2xl relative transform transition-all scale-95 opacity-0" id="modal-content">
+            <button onclick="closeQuoteModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-700 w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center transition">
+                <i class="fas fa-times text-lg"></i>
+            </button>
+            <div class="space-y-2 mb-6">
+                <h3 class="text-2xl font-bold text-navy-900">Request a Free Quote</h3>
+                <p class="text-slate-600 text-sm">Tell us about your property maintenance or repair needs.</p>
+            </div>
+
+            <form onsubmit="handleModalSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-slate-700 mb-1">Your Name *</label>
+                    <input type="text" required placeholder="John Smith" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm">
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-slate-700 mb-1">Phone Number *</label>
+                        <input type="tel" required placeholder="07123 456789" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-slate-700 mb-1">Postcode / Area *</label>
+                        <input type="text" required placeholder="TF1 / WV1" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-slate-700 mb-1">Service Required</label>
+                    <select class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm bg-white">
+                        <option>Property Maintenance</option>
+                        <option>Handyman Services</option>
+                        <option>Home Repairs</option>
+                        <option>Painting & Decorating</option>
+                        <option>General Maintenance</option>
+                        <option>Renovation & Improvement</option>
+                        <option>Commercial Property Maintenance</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-slate-700 mb-1">Brief Description</label>
+                    <textarea rows="3" placeholder="Describe what needs doing..." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm"></textarea>
+                </div>
+                <button type="submit" class="w-full py-3.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-sm shadow-lg transition">
+                    Submit Quote Request
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Message Box -->
+    <div id="success-toast" class="fixed bottom-6 right-6 z-50 bg-navy-900 text-white px-6 py-4 rounded-2xl shadow-2xl flex items-center space-x-3 transform translate-y-24 opacity-0 transition-all duration-300 border border-slate-700">
+        <div class="w-8 h-8 rounded-full bg-amber-500 text-navy-900 flex items-center justify-center font-bold">
+            <i class="fas fa-check"></i>
+        </div>
+        <div>
+            <h4 class="font-bold text-sm">Request Submitted!</h4>
+            <p class="text-xs text-slate-300">We will get back to you shortly.</p>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Sticky Header Shadow
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+
+        // Modal Logic
+        const quoteModal = document.getElementById('quote-modal');
+        const modalContent = document.getElementById('modal-content');
+
+        function openQuoteModal() {
+            quoteModal.classList.remove('hidden');
+            setTimeout(() => {
+                modalContent.classList.remove('scale-95', 'opacity-0');
+                modalContent.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        function closeQuoteModal() {
+            modalContent.classList.remove('scale-100', 'opacity-100');
+            modalContent.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                quoteModal.classList.add('hidden');
+            }, 200);
+        }
+
+        quoteModal.addEventListener('click', (e) => {
+            if (e.target === quoteModal) {
+                closeQuoteModal();
+            }
+        });
+
+        // Toast Notification
+        function showToast() {
+            const toast = document.getElementById('success-toast');
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 4000);
+        }
+
+        function handleQuickQuote(e) {
+            e.preventDefault();
+            e.target.reset();
+            showToast();
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            e.target.reset();
+            showToast();
+        }
+
+        function handleModalSubmit(e) {
+            e.preventDefault();
+            closeQuoteModal();
+            e.target.reset();
+            showToast();
+        }
+    </script>
+</body>
+</html>
